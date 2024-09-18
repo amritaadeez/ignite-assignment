@@ -1,0 +1,74 @@
+<div class="section">
+  <div class="container">
+    <h2>
+      <button
+        routerLink="/"
+        class="back-icon-btn"
+        aria-label="Back to previous page"
+      >
+        <img src="assets/svg-icons/Back.svg" alt="Back icon" />
+      </button>
+      {{ genre }}
+    </h2>
+
+    <!-- Search Input -->
+    <div class="search-container">
+      <input
+        type="text"
+        (input)="searchBooks($event)"
+        placeholder="Search"
+        class="search-input"
+        [(ngModel)]="searchTerm"
+      />
+      <img
+        src="assets/svg-icons/Search.svg"
+        alt="Search icon"
+        class="search-icon"
+      />
+      <button *ngIf="searchTerm" (click)="clearSearch()" class="clear-button">
+        <img src="assets/svg-icons/Cancel.svg" alt="Clear icon" />
+      </button>
+    </div>
+  </div>
+  <div class="section-cards">
+    <div class="container">
+      <div class="book-list" (scroll)="onScroll()">
+        <!-- Skeleton Loader -->
+        <div *ngIf="loading && !books.length" class="skeleton-loader">
+          <div
+            class="skeleton-card"
+            *ngFor="let placeholder of placeholders"
+          ></div>
+        </div>
+
+        <!-- Book Cards -->
+        <div class="card-container row">
+          <div *ngFor="let book of books" class="column card" (click)=" viewBook(book)">
+            <img
+              *ngIf="book.formats['image/jpeg']"
+              [src]="book.formats['image/jpeg']"
+              alt="Book cover"
+              class="book-cover"
+            />
+            <h5 class="book-title">{{ book?.title }}</h5>
+            <h6 class="book-author">{{ book.authors[0]?.name }}</h6>
+          </div>
+        </div>
+      </div>
+
+      <!-- No Books Message -->
+      <div *ngIf="!loading && books.length === 0" class="no-books-message">
+        No books available
+      </div>
+
+      <!-- Loading Indicator -->
+      <div *ngIf="loadingMore" class="loading-indicator">
+        Loading more books...
+      </div>
+
+      <div *ngIf="!loading && hasMoreBooks" class="load-more">
+        <button (click)="loadBooks()">Load More</button>
+      </div>
+    </div>
+  </div>
+</div>

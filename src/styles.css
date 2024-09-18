@@ -1,1 +1,85 @@
-/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap");
+
+html,
+body {
+  height: 100%;
+}
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: #f8f7ff !important;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px; /* Small devices */
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px; /* Medium devices */
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px; /* Large devices */
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px; /* Extra large devices */
+  }
+}
+
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1320px; /* Extra extra large devices */
+  }
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -5px;
+}
+
+.column {
+  padding: 5px;
+  box-sizing: border-box;
+  flex: 0 0 100%; /* Default to full width */
+}
+
+@media (min-width: 576px) {
+  .column {
+    flex: 0 0 50%; /* 2 columns */
+  }
+}
+
+@media (min-width: 768px) {
+  .column {
+    flex: 0 0 33.33%; /* 3 columns */
+  }
+}
+
+@media (min-width: 992px) {
+  .column {
+    flex: 0 0 25%; /* 4 columns */
+  }
+}
+
+@media (min-width: 1200px) {
+  .column {
+    flex: 0 0 16.66%; /* 6 columns */
+  }
+}

@@ -1,0 +1,81 @@
+.home-container {
+  background-color: #f8f7ff;
+}
+.genre-header {
+  background-image: url('../../assets/svg-icons/Pattern.svg');
+}
+
+.project-title {
+  font-size: 48px;
+  color: #5E56E7;
+  margin-bottom: 10px;
+}
+
+.project-description {
+  font-size: 1.2rem;
+  color: #6b6b6b;
+  margin-bottom: 30px;
+}
+
+.genre-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.genre-card {
+  background-color: white;
+  padding: 10px;
+  border-radius: 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 5px 0 rgba(211, 209, 238, 0.5);
+  transition: transform 0.3s;
+  cursor: pointer;
+  font-size: 50px;
+  margin: 0 50px 0 0 ;
+}
+
+.genre-card:hover {
+  transform: translateY(-5px);
+}
+
+.genre-name-icon {
+    align-items: center;
+    display: flex;
+}
+.genre-icon {
+ height: 30px;
+}
+
+.genre-name {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #333;
+  flex-grow: 1;
+  margin-left: 10px;
+  text-transform: uppercase;
+}
+
+.arrow {
+    display: flex;
+    align-items: center;
+}
+
+.arrow > img {
+  height: 15px;
+}
+
+/* Mobile view */
+@media (max-width: 600px) {
+  .genre-container {
+    grid-template-columns: 1fr;
+  }
+  .home-container {
+    padding: 10px;
+  }
+  .genre-card {
+    margin: 0 ;
+  }
+}

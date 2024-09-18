@@ -1,0 +1,33 @@
+<div class="home-container">
+  <div class="genre-header">
+    <div class="container">
+      <h1 class="project-title">Gutenberg Project</h1>
+      <p class="project-description">
+        A social cataloging website that allows you to freely search its
+        database of books, annotations, and reviews.
+      </p>
+    </div>
+  </div>
+  <div class="genre-container container">
+    <div
+      *ngFor="let genre of genres"
+      class="genre-card"
+      (click)="selectGenre(genre.name)"
+    >
+      <div class="genre-name-icon">
+        <img
+          class="genre-icon"
+          [src]="genre.icon"
+          [alt]="genre.name + ' Icon'"
+        />
+        <span class="genre-name">{{ genre.name }}</span>
+      </div>
+      <span class="arrow">
+        <img
+          class="genre-icon"
+          src="assets/svg-icons/Next.svg"
+          alt="next icon'"
+      /></span>
+    </div>
+  </div>
+</div>
